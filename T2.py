@@ -204,10 +204,7 @@ def generate_abbreviations(filename):
             allLines.append(line.strip())
             abList = createAllAbs(line)
             all_abs[line.strip()] = abList
-            # print(abb, abbScores)
-            # f_out.write(f'{name}\n')
-            # f_out.write(' '.join(abb))
-            # f_out.write('\n')
+
     allOptimisedAbbs = selectOptimizedAbs(all_abs, allLines)
     selectedAbs = {}
     for line, scoreIndices in allOptimisedAbbs.items():
@@ -224,9 +221,17 @@ def generate_abbreviations(filename):
             f_out.write('\n')
     print(selectedAbs)
 
-# Replace these with the actual file names
-# filename = 't1.txt'
-filename = 'trees.txt'
+names = 't1.txt'
+trees = 'trees.txt'
 values_file = 'values.txt'
 
-generate_abbreviations(filename)
+# Prompt the user to enter a file path
+file_path = input("Enter the path of the file: ")
+
+# Check if the user entered a file path
+if file_path:
+    print(f"Selected file: {file_path}")
+else:
+    print("No file path entered")
+
+generate_abbreviations(file_path)
