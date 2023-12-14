@@ -235,3 +235,7 @@ else:
     print("No file path entered")
 
 generate_abbreviations(file_path)
+
+# InCase the file path does not work.
+# generate_abbreviations(names)
+# generate_abbreviations(trees)
